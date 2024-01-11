@@ -1,0 +1,38 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'war'
+}
+
+group = 'DeBug'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.testng:testng:7.1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor('org.projectlombok:lombok:1.18.20')
+	compileOnly('org.projectlombok:lombok:1.18.20')
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation group: 'org.json', name: 'json', version: '20160810'
+	implementation 'org.mongodb:mongodb-driver-sync'
+	implementation 'org.apache.httpcomponents:httpclient'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
